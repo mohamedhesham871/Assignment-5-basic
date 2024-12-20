@@ -36,7 +36,7 @@
             //int n;
             //while (!int.TryParse(Console.ReadLine(), out n) || n <= 0)
             //{
-            //    Console.Write("enter size of array  integer & positive");
+            //    Console.Write("enter integer & positive");
             //}
             //int[] arr = new int[n];
 
@@ -45,7 +45,7 @@
             //    int x;
             //    while (!int.TryParse(Console.ReadLine(), out x))
             //    {
-            //        Console.Write("enter size of array  integer");
+            //        Console.Write("enter   integer");
             //    }
             //    arr[i] = x;
             //    sum1 += x;
@@ -114,6 +114,36 @@
 
             #endregion
             #region Q23: Write a program in C# Sharp to find maximum and minimum element in an array
+            //Console.WriteLine("enter size of Array");
+            //int n;
+            //while (!int.TryParse(Console.ReadLine(), out n) || n <= 0)
+            //{
+            //    Console.Write("enter size of Array  integer & positive");
+            //}
+            //int[] arr = new int[n];
+            //int min=int.MaxValue; 
+            //int max=int.MinValue;
+            //for (int i = 0; i < n; i++)
+            //{
+            //    int x;
+            //    while (!int.TryParse(Console.ReadLine(), out x))
+            //    {
+            //        Console.Write("enter   integer");
+            //    }
+            //    arr[i] = x;
+            //    if(x < min)
+            //    {
+            //        min= x;
+            //    }
+            //    if(x > max)
+            //    {
+            //        max= x;
+            //    }
+
+            //}
+            //Console.WriteLine($"min number is {min}\nmax number is {max}");
+            #endregion
+            #region Q24: Write a program in C# Sharp to find the second largest element in an array.
             Console.WriteLine("enter size of Array");
             int n;
             while (!int.TryParse(Console.ReadLine(), out n) || n <= 0)
@@ -121,28 +151,19 @@
                 Console.Write("enter size of Array  integer & positive");
             }
             int[] arr = new int[n];
-            int min=int.MaxValue; 
-            int max=int.MinValue;
+
             for (int i = 0; i < n; i++)
             {
                 int x;
                 while (!int.TryParse(Console.ReadLine(), out x))
                 {
-                    Console.Write("enter size of array  integer");
+                    Console.Write("enter   integer");
                 }
                 arr[i] = x;
-                if(x < min)
-                {
-                    min= x;
-                }
-                if(x > max)
-                {
-                    max= x;
-                }
-
             }
-            Console.WriteLine($"min number is {min}\nmax number is {max}");
-            #endregion
-        }
+            Array.Sort(arr);
+            Console.WriteLine($"the second largest element {arr[n - 2]}");
+                #endregion
+            }
     }
 }
