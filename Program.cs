@@ -208,24 +208,38 @@ namespace Assignment_5_basic
 
             #endregion
             #region Q27:Write a program to create two multidimensional arrays of same size. Accept value from user and store them in first array. Now copy all the elements of first array on second array and print second array.
-            Console.WriteLine("enter size of Array");
-            int n = int.Parse(Console.ReadLine());
-            int[,] arr = new int[n,n];
-            for (int i = 0; i < arr.GetLength(0); i++)
-            {
-                for (int j = 0; j < arr.GetLength(1); j++)
-                    arr[i,j]=int.Parse(Console.ReadLine());
-            }
-            int[,] arr2 = new int[n,n];
+            //Console.WriteLine("enter size of Array");
+            //int n = int.Parse(Console.ReadLine());
+            //int[,] arr = new int[n,n];
+            //for (int i = 0; i < arr.GetLength(0); i++)
+            //{
+            //    for (int j = 0; j < arr.GetLength(1); j++)
+            //        arr[i,j]=int.Parse(Console.ReadLine());
+            //}
+            //int[,] arr2 = new int[n,n];
 
-            for (int i = 0; i < arr.GetLength(0); i++)
+            //for (int i = 0; i < arr.GetLength(0); i++)
+            //{
+            //    for (int j = 0; j < arr.GetLength(1); j++)
+            //    {
+            //        arr2[i, j] = arr[i, j];
+            //        Console.Write($"{arr2[i, j]} ");
+            //    }
+            //    Console.WriteLine();
+            //}
+
+            #endregion
+            #region Q28:Write a Program to Print One Dimensional Array in Reverse Order
+            Console.WriteLine("enter size of Array");
+            int x=int.Parse(Console.ReadLine());
+            int[] arr=new int[x];
+            for (int i = 0; i < x; i++)
             {
-                for (int j = 0; j < arr.GetLength(1); j++)
-                {
-                    arr2[i, j] = arr[i, j];
-                    Console.Write($"{arr2[i, j]} ");
-                }
-                Console.WriteLine();
+                arr[i] = int.Parse(Console.ReadLine());
+            }
+            for(int i=x-1;i>=0;i--)
+            {
+                Console.WriteLine(arr[i]);  
             }
 
             #endregion
