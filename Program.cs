@@ -144,6 +144,27 @@
             //Console.WriteLine($"min number is {min}\nmax number is {max}");
             #endregion
             #region Q24: Write a program in C# Sharp to find the second largest element in an array.
+            //Console.WriteLine("enter size of Array");
+            //int n;
+            //while (!int.TryParse(Console.ReadLine(), out n) || n <= 0)
+            //{
+            //    Console.Write("enter size of Array  integer & positive");
+            //}
+            //int[] arr = new int[n];
+
+            //for (int i = 0; i < n; i++)
+            //{
+            //    int x;
+            //    while (!int.TryParse(Console.ReadLine(), out x))
+            //    {
+            //        Console.Write("enter   integer");
+            //    }
+            //    arr[i] = x;
+            //}
+            //Array.Sort(arr);
+            //Console.WriteLine($"the second largest element {arr[n - 2]}");
+            #endregion
+            #region Q25:write a program find the longest distance between Two equal cells
             Console.WriteLine("enter size of Array");
             int n;
             while (!int.TryParse(Console.ReadLine(), out n) || n <= 0)
@@ -161,9 +182,19 @@
                 }
                 arr[i] = x;
             }
-            Array.Sort(arr);
-            Console.WriteLine($"the second largest element {arr[n - 2]}");
-                #endregion
+            
+            int dis=0 ;
+            for (int i = 0;i < n; i++)
+            {
+                for (int j = i + 1; j < n; j++)
+                {
+                    if (arr[i] == arr[j] && ((j - 1) - (i) > dis))
+                        dis = (j - 1) - (i);
+                }
             }
+
+            Console.WriteLine($"the longest distance is {dis}");
+            #endregion
+        }
     }
 }
