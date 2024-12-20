@@ -1,4 +1,6 @@
-﻿namespace Assignment_5_basic
+﻿using System.Security.Cryptography;
+
+namespace Assignment_5_basic
 {
     internal class Program
     {
@@ -165,35 +167,45 @@
             //Console.WriteLine($"the second largest element {arr[n - 2]}");
             #endregion
             #region Q25:write a program find the longest distance between Two equal cells
-            Console.WriteLine("enter size of Array");
-            int n;
-            while (!int.TryParse(Console.ReadLine(), out n) || n <= 0)
-            {
-                Console.Write("enter size of Array  integer & positive");
-            }
-            int[] arr = new int[n];
+            //Console.WriteLine("enter size of Array");
+            //int n;
+            //while (!int.TryParse(Console.ReadLine(), out n) || n <= 0)
+            //{
+            //    Console.Write("enter size of Array  integer & positive");
+            //}
+            //int[] arr = new int[n];
 
-            for (int i = 0; i < n; i++)
+            //for (int i = 0; i < n; i++)
+            //{
+            //    int x;
+            //    while (!int.TryParse(Console.ReadLine(), out x))
+            //    {
+            //        Console.Write("enter   integer");
+            //    }
+            //    arr[i] = x;
+            //}
+
+            //int dis=0 ;
+            //for (int i = 0;i < n; i++)
+            //{
+            //    for (int j = i + 1; j < n; j++)
+            //    {
+            //        if (arr[i] == arr[j] && ((j - 1) - (i) > dis))
+            //            dis = (j - 1) - (i);
+            //    }
+            //}
+
+            //Console.WriteLine($"the longest distance is {dis}");
+            #endregion
+            #region Q26: Given a list of space separated words, reverse the order of the words.
+            Console.WriteLine("enter string ");
+            string x = Console.ReadLine();
+            string[] arr = x.Split(' ');
+            for (int i = arr.Length - 1; i >= 0; i--)
             {
-                int x;
-                while (!int.TryParse(Console.ReadLine(), out x))
-                {
-                    Console.Write("enter   integer");
-                }
-                arr[i] = x;
-            }
-            
-            int dis=0 ;
-            for (int i = 0;i < n; i++)
-            {
-                for (int j = i + 1; j < n; j++)
-                {
-                    if (arr[i] == arr[j] && ((j - 1) - (i) > dis))
-                        dis = (j - 1) - (i);
-                }
+                Console.Write(arr[i] + " ");
             }
 
-            Console.WriteLine($"the longest distance is {dis}");
             #endregion
         }
     }
