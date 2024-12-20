@@ -93,25 +93,55 @@
 
             #endregion
             #region Q22:Write a program in C# Sharp to count the frequency of each element of an array.
-            int[] arr = { 10, 10, 3, 4, 2, 3, 2, 4, 4, 10 };
-            // You can enter Array  
-            // But i make it to show You result 
-            Array.Sort(arr);
-            int prev = arr[0];
-            int count = 1;
-            for (int i = 1; i < arr.Length; i++)
-            {
-                if (arr[i] == prev)
-                    count++;
-                else
-                {
-                    Console.WriteLine($"{prev} and freq is : {count} ");
-                    count = 1;
-                    prev = arr[i];
-                }
-            }
-            Console.WriteLine($"{prev} and freq is : {count} ");
+            //int[] arr = { 10, 10, 3, 4, 2, 3, 2, 4, 4, 10 };
+            //// You can enter Array  
+            //// But i make it to show You result 
+            //Array.Sort(arr);
+            //int prev = arr[0];
+            //int count = 1;
+            //for (int i = 1; i < arr.Length; i++)
+            //{
+            //    if (arr[i] == prev)
+            //        count++;
+            //    else
+            //    {
+            //        Console.WriteLine($"{prev} and freq is : {count} ");
+            //        count = 1;
+            //        prev = arr[i];
+            //    }
+            //}
+            //Console.WriteLine($"{prev} and freq is : {count} ");
 
+            #endregion
+            #region Q23: Write a program in C# Sharp to find maximum and minimum element in an array
+            Console.WriteLine("enter size of Array");
+            int n;
+            while (!int.TryParse(Console.ReadLine(), out n) || n <= 0)
+            {
+                Console.Write("enter size of Array  integer & positive");
+            }
+            int[] arr = new int[n];
+            int min=int.MaxValue; 
+            int max=int.MinValue;
+            for (int i = 0; i < n; i++)
+            {
+                int x;
+                while (!int.TryParse(Console.ReadLine(), out x))
+                {
+                    Console.Write("enter size of array  integer");
+                }
+                arr[i] = x;
+                if(x < min)
+                {
+                    min= x;
+                }
+                if(x > max)
+                {
+                    max= x;
+                }
+
+            }
+            Console.WriteLine($"min number is {min}\nmax number is {max}");
             #endregion
         }
     }
