@@ -198,12 +198,34 @@ namespace Assignment_5_basic
             //Console.WriteLine($"the longest distance is {dis}");
             #endregion
             #region Q26: Given a list of space separated words, reverse the order of the words.
-            Console.WriteLine("enter string ");
-            string x = Console.ReadLine();
-            string[] arr = x.Split(' ');
-            for (int i = arr.Length - 1; i >= 0; i--)
+            //Console.WriteLine("enter string ");
+            //string x = Console.ReadLine();
+            //string[] arr = x.Split(' ');
+            //for (int i = arr.Length - 1; i >= 0; i--)
+            //{
+            //    Console.Write(arr[i] + " ");
+            //}
+
+            #endregion
+            #region Q27:Write a program to create two multidimensional arrays of same size. Accept value from user and store them in first array. Now copy all the elements of first array on second array and print second array.
+            Console.WriteLine("enter size of Array");
+            int n = int.Parse(Console.ReadLine());
+            int[,] arr = new int[n,n];
+            for (int i = 0; i < arr.GetLength(0); i++)
             {
-                Console.Write(arr[i] + " ");
+                for (int j = 0; j < arr.GetLength(1); j++)
+                    arr[i,j]=int.Parse(Console.ReadLine());
+            }
+            int[,] arr2 = new int[n,n];
+
+            for (int i = 0; i < arr.GetLength(0); i++)
+            {
+                for (int j = 0; j < arr.GetLength(1); j++)
+                {
+                    arr2[i, j] = arr[i, j];
+                    Console.Write($"{arr2[i, j]} ");
+                }
+                Console.WriteLine();
             }
 
             #endregion
