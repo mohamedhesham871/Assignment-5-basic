@@ -55,10 +55,10 @@
             #endregion
             #region Q21:Write a program in C# Sharp to merge two arrays of the same size sorted in ascending order
             // i will make merge sort in this example :)
-            int[] arr1 = { 1, 2, 7,15 };
-            int[] arr2 = { 4, 6, 9, 14 };
-            int [] mergedArray= new int[arr1.Length*2-1];
-            int i = 0,j=0,z=0;
+            //int[] arr1 = { 1, 2, 7,15 };
+            //int[] arr2 = { 4, 6, 9, 14 };
+            //int [] mergedArray= new int[arr1.Length*2-1];
+            //int i = 0,j=0,z=0;
 
             //while (i<arr1.Length && j<arr2.Length)
             //{
@@ -90,6 +90,27 @@
             //}
             //Array.Sort(mergedArray);
             //Console.WriteLine(string.Join(',', mergedArray));
+
+            #endregion
+            #region Q22:Write a program in C# Sharp to count the frequency of each element of an array.
+            int[] arr = { 10, 10, 3, 4, 2, 3, 2, 4, 4, 10 };
+            // You can enter Array  
+            // But i make it to show You result 
+            Array.Sort(arr);
+            int prev = arr[0];
+            int count = 1;
+            for (int i = 1; i < arr.Length; i++)
+            {
+                if (arr[i] == prev)
+                    count++;
+                else
+                {
+                    Console.WriteLine($"{prev} and freq is : {count} ");
+                    count = 1;
+                    prev = arr[i];
+                }
+            }
+            Console.WriteLine($"{prev} and freq is : {count} ");
 
             #endregion
         }
