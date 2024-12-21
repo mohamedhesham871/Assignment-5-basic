@@ -1,4 +1,5 @@
-﻿using System.Security.Cryptography;
+﻿using System.Runtime.CompilerServices;
+using System.Security.Cryptography;
 
 namespace Assignment_5_basic
 {
@@ -285,23 +286,50 @@ namespace Assignment_5_basic
             //}
             #endregion
             #region Q2:Write a program in C# Sharp to create a function to calculate the sum of the individual digits of a given number.
+            //Console.WriteLine("enter numeber ");
+            //int x=int.Parse(Console.ReadLine());
+            //int sum = calcDigit(x);
+            //Console.WriteLine($"Sum of Digits :{sum}");
+            //static int  calcDigit(int x)
+            //{
+            //    int sum = 0;
+            //    while (x > 0)
+            //    {
+            //        sum += x % 10;
+            //        x /= 10;
+            //    }
+
+            //    return (sum );
+            //}
+
+
+            #endregion
+            #region Q3:Create a function named "IsPrime", which receives an integer number and retuns true if it is prime, or false if it is not .
             Console.WriteLine("enter numeber ");
-            int x=int.Parse(Console.ReadLine());
-            int sum = calcDigit(x);
-            Console.WriteLine($"Sum of Digits :{sum}");
-            static int  calcDigit(int x)
-            {
-                int sum = 0;
-                while (x > 0)
+            int x = int.Parse(Console.ReadLine());
+            Isprime(x);
+
+           static void Isprime(int x)
+           {
+                bool Flag = false;
+                for (int i = 2; i < x; i++)
                 {
-                    sum += x % 10;
-                    x /= 10;
+                    if(x%i==0)
+                    {
+                        Flag = true;
+                        break;
+                    }
                 }
-
-                return (sum );
-            }
-
-
+                if (!Flag && x > 1)
+                {
+                    Console.WriteLine("number is Prime");
+                }
+                else
+                {
+                    Console.WriteLine("number is not Prime");
+                }
+               
+           }
             #endregion
         }
 
