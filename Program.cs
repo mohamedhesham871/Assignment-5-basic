@@ -244,6 +244,7 @@ namespace Assignment_5_basic
             //}
 
             #endregion
+            // i write function in main to But it same Range ----> i prefer But it out main  
             #region Q1 Function:Explain the difference between passing (Value type parameters) by value and by reference then write a suitable c# example.
             ////when you use calling BY Value work as you take copy  OR temporary data  as any chane on data does not effect on real data 
             ////once you finish function will found no change happen on data   finally function Being in Stack 
@@ -305,31 +306,55 @@ namespace Assignment_5_basic
 
             #endregion
             #region Q3:Create a function named "IsPrime", which receives an integer number and retuns true if it is prime, or false if it is not .
+            // Console.WriteLine("enter numeber ");
+            // int x = int.Parse(Console.ReadLine());
+            // Isprime(x);
+
+            //static void Isprime(int x)
+            //{
+            //     bool Flag = false;
+            //     for (int i = 2; i < x; i++)
+            //     {
+            //         if(x%i==0)
+            //         {
+            //             Flag = true;
+            //             break;
+            //         }
+            //     }
+            //     if (!Flag && x > 1)
+            //     {
+            //         Console.WriteLine("number is Prime");
+            //     }
+            //     else
+            //     {
+            //         Console.WriteLine("number is not Prime");
+            //     }
+
+            //}
+            #endregion
+            #region Q4:Create an iterative (non-recursive) function to calculate the factorial of the number specified as parameter .
             Console.WriteLine("enter numeber ");
             int x = int.Parse(Console.ReadLine());
-            Isprime(x);
 
-           static void Isprime(int x)
-           {
-                bool Flag = false;
-                for (int i = 2; i < x; i++)
+            long fact = Factorial(x);
+            Console.WriteLine($"Factorial {fact}");
+
+
+
+
+            static long Factorial(int x)
+            {
+                int fact = 1;
+
+                for(int i = 1;i<=x; i++)
                 {
-                    if(x%i==0)
-                    {
-                        Flag = true;
-                        break;
-                    }
+                    fact *= i;
                 }
-                if (!Flag && x > 1)
-                {
-                    Console.WriteLine("number is Prime");
-                }
-                else
-                {
-                    Console.WriteLine("number is not Prime");
-                }
-               
-           }
+
+                return fact;
+            }
+
+
             #endregion
         }
 
