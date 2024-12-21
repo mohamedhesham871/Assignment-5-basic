@@ -1,4 +1,9 @@
-﻿using System.Security.Cryptography;
+﻿using System.Buffers.Text;
+using System.Diagnostics.Metrics;
+using System.Runtime.CompilerServices;
+using System.Security.Cryptography;
+using static System.Runtime.InteropServices.JavaScript.JSType;
+using System.Xml.Linq;
 
 namespace Assignment_5_basic
 {
@@ -243,48 +248,137 @@ namespace Assignment_5_basic
             //}
 
             #endregion
+            // i write function in main to But it same Range ----> i prefer But it out main  
             #region Q1 Function:Explain the difference between passing (Value type parameters) by value and by reference then write a suitable c# example.
-            //when you use calling BY Value work as you take copy  OR temporary data  as any chane on data does not effect on real data 
-            //once you finish function will found no change happen on data   finally function Being in Stack 
+            ////when you use calling BY Value work as you take copy  OR temporary data  as any chane on data does not effect on real data 
+            ////once you finish function will found no change happen on data   finally function Being in Stack 
 
-            //when You use calling BY Address You you sent Address that contain data  so any change will effect on data out side function 
-            //once you finish will find changing on data  and funtion Be in Heap 
+            ////when You use calling BY Address You you sent Address that contain data  so any change will effect on data out side function 
+            ////once you finish will find changing on data  and funtion Be in Heap 
 
-            //example  (Swap Two numbers)
-            int x = 10;
-            int y = 20;
-            Console.WriteLine("data Befor Function");
-            Console.WriteLine(x + "  " + y);
-            Swap1(x, y);
-            Console.WriteLine("data After Function");
-            Console.WriteLine(x + "  " + y);
-            //As we see no difference 
+            ////example  (Swap Two numbers)
+            //int x = 10;
+            //int y = 20;
+            //Console.WriteLine("data Befor Function");
+            //Console.WriteLine(x + "  " + y);
+            //Swap1(x, y);
+            //Console.WriteLine("data After Function");
+            //Console.WriteLine(x + "  " + y);
+            ////As we see no difference 
 
-            //use Address
-            Console.WriteLine("data using call By address Function");
-            Swap2(ref x, ref y);
-            Console.WriteLine("data After Function");
-            Console.WriteLine(x + "  " + y);
+            ////use Address
+            //Console.WriteLine("data using call By address Function");
+            //Swap2(ref x, ref y);
+            //Console.WriteLine("data After Function");
+            //Console.WriteLine(x + "  " + y);
 
 
-            static void Swap1(int num1, int num2)
+            //static void Swap1(int num1, int num2)
+            //{
+            //    int Temp = num1;
+            //    num1 = num2;
+            //    num2 = Temp;
+            //    Console.WriteLine("data in Function");
+            //    Console.WriteLine(num1 + "  " + num2);
+            //}
+            //static void Swap2( ref int num1,  ref int num2)
+            //{
+            //    int Temp = num1;
+            //    num1 = num2;
+            //    num2 = Temp;
+            //    Console.WriteLine("data in Function");
+            //    Console.WriteLine(num1 + "  " + num2);
+            //}
+            #endregion
+            #region Q2:Write a program in C# Sharp to create a function to calculate the sum of the individual digits of a given number.
+            //Console.WriteLine("enter numeber ");
+            //int x=int.Parse(Console.ReadLine());
+            //int sum = calcDigit(x);
+            //Console.WriteLine($"Sum of Digits :{sum}");
+            //static int  calcDigit(int x)
+            //{
+            //    int sum = 0;
+            //    while (x > 0)
+            //    {
+            //        sum += x % 10;
+            //        x /= 10;
+            //    }
+
+            //    return (sum );
+            //}
+
+
+            #endregion
+            #region Q3:Create a function named "IsPrime", which receives an integer number and retuns true if it is prime, or false if it is not .
+            // Console.WriteLine("enter numeber ");
+            // int x = int.Parse(Console.ReadLine());
+            // Isprime(x);
+
+            //static void Isprime(int x)
+            //{
+            //     bool Flag = false;
+            //     for (int i = 2; i < x; i++)
+            //     {
+            //         if(x%i==0)
+            //         {
+            //             Flag = true;
+            //             break;
+            //         }
+            //     }
+            //     if (!Flag && x > 1)
+            //     {
+            //         Console.WriteLine("number is Prime");
+            //     }
+            //     else
+            //     {
+            //         Console.WriteLine("number is not Prime");
+            //     }
+
+            //}
+            #endregion
+            #region Q4:Create an iterative (non-recursive) function to calculate the factorial of the number specified as parameter .
+            //Console.WriteLine("enter numeber ");
+            //int x = int.Parse(Console.ReadLine());
+
+            //long fact = Factorial(x);
+            //Console.WriteLine($"Factorial {fact}");
+
+            //static long Factorial(int x)
+            //{
+            //    int fact = 1;
+
+            //    for(int i = 1;i<=x; i++)
+            //    {
+            //        fact *= i;
+            //    }
+
+            //    return fact;
+            //}
+
+
+            #endregion
+            #region Q5:Create a function named "ChangeChar" to modify a letter in a certain position (0 based) of a string, replacing it with a different letter
+            Console.WriteLine("enter String");
+            string x= Console.ReadLine();
+            Console.WriteLine("enter char you want to chane and new char , and position");
+            string s = Console.ReadLine();
+            char old = s[0];
+            char nw = s[2];    
+            int pos =int.Parse(s.Split(" ")[2]);
+            x = UpdateString( x,  nw,pos);
+            Console.WriteLine(x);
+
+
+            static string UpdateString(string ss, char NewChar, int pos)
             {
-                int Temp = num1;
-                num1 = num2;
-                num2 = Temp;
-                Console.WriteLine("data in Function");
-                Console.WriteLine(num1 + "  " + num2);
-            }
-            static void Swap2( ref int num1,  ref int num2)
-            {
-                int Temp = num1;
-                num1 = num2;
-                num2 = Temp;
-                Console.WriteLine("data in Function");
-                Console.WriteLine(num1 + "  " + num2);
+
+
+                char[] arrchar = ss.ToCharArray();
+                arrchar[pos] = NewChar;
+                return new string(arrchar);
             }
             #endregion
         }
-       
+
     }
 }
