@@ -1,5 +1,9 @@
-﻿using System.Runtime.CompilerServices;
+﻿using System.Buffers.Text;
+using System.Diagnostics.Metrics;
+using System.Runtime.CompilerServices;
 using System.Security.Cryptography;
+using static System.Runtime.InteropServices.JavaScript.JSType;
+using System.Xml.Linq;
 
 namespace Assignment_5_basic
 {
@@ -333,28 +337,46 @@ namespace Assignment_5_basic
             //}
             #endregion
             #region Q4:Create an iterative (non-recursive) function to calculate the factorial of the number specified as parameter .
-            Console.WriteLine("enter numeber ");
-            int x = int.Parse(Console.ReadLine());
+            //Console.WriteLine("enter numeber ");
+            //int x = int.Parse(Console.ReadLine());
 
-            long fact = Factorial(x);
-            Console.WriteLine($"Factorial {fact}");
+            //long fact = Factorial(x);
+            //Console.WriteLine($"Factorial {fact}");
+
+            //static long Factorial(int x)
+            //{
+            //    int fact = 1;
+
+            //    for(int i = 1;i<=x; i++)
+            //    {
+            //        fact *= i;
+            //    }
+
+            //    return fact;
+            //}
 
 
+            #endregion
+            #region Q5:Create a function named "ChangeChar" to modify a letter in a certain position (0 based) of a string, replacing it with a different letter
+            Console.WriteLine("enter String");
+            string x= Console.ReadLine();
+            Console.WriteLine("enter char you want to chane and new char , and position");
+            string s = Console.ReadLine();
+            char old = s[0];
+            char nw = s[2];    
+            int pos =int.Parse(s.Split(" ")[2]);
+            x = UpdateString( x,  nw,pos);
+            Console.WriteLine(x);
 
 
-            static long Factorial(int x)
+            static string UpdateString(string ss, char NewChar, int pos)
             {
-                int fact = 1;
 
-                for(int i = 1;i<=x; i++)
-                {
-                    fact *= i;
-                }
 
-                return fact;
+                char[] arrchar = ss.ToCharArray();
+                arrchar[pos] = NewChar;
+                return new string(arrchar);
             }
-
-
             #endregion
         }
 
